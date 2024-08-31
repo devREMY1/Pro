@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Recipe</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+					'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+				background-color: bisque;
+
+				transition: all ease-in-out 1s;
+			}
+
+			h1 {
+				font-size: 45px;
+				font-weight: 600;
+				color: #8b2bbf;
+
+				transition: all ease-in-out 1s;
+			}
+
+			h2 {
+				font-size: 35px;
+				font-weight: 500;
+				color: #8b2bbf;
+			}
+
+			ul {
+				list-style: none;
+				font-size: 20px;
+				color: #8b2bbf;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Коментарии</h1>
+
+		<div id="commentsSection">
+			<h2>Сохраненные комментарии:</h2>
+			<ul id="commentsList"></ul>
+		</div>
+
+		<script src="./main.js"></script>
+	</body>
+</html>
