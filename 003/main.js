@@ -1,9 +1,8 @@
 let milk =
 	'Рецепт с молоком: смешайте 200 мл молока с 2 яйцами, добавьте 100 г муки и 50 г сахара.'
 
-let notmilk = 'Рецепт без молока: смешайте 2 яйца с 100 г муки и 50 г сахара.'
-
-function verificatio() {
+let notMilk = 'Рецепт без молока: смешайте 2 яйца с 100 г муки и 50 г сахара.'
+function verification() {
 	alert(
 		'Выберите какой рецепт вам больше подходит!\n1)Рецепт с молоком\n2)Рецепт без молока'
 	)
@@ -14,7 +13,7 @@ function verificatio() {
 		alert(milk)
 		comment()
 	} else if (numberInput == 2) {
-		alert(notmilk)
+		alert(notMilk)
 		comment()
 	} else if (numberInput == 0) {
 		alert('Грустно что ты уходишь :(')
@@ -23,7 +22,7 @@ function verificatio() {
 		alert(
 			'Вы ввели не число или отменили ввод.\nПопробуйте ещё раз!\n\nДля завершения работы введите 0'
 		)
-		verificatio()
+		verification()
 	}
 }
 
@@ -70,5 +69,5 @@ function displayComments() {
 
 window.onload = function () {
 	displayComments()
-	verificatio()
+	verification()
 }
