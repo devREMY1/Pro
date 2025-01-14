@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let m = 'milk';
+			let f = 'fish';
+
+			function receptCheck() {
+				const x = prompt('оберіть рецепт з fish or milk');
+				switch (x) {
+					case f:
+						alert('рецепт з рибою');
+						break;
+					case m:
+						alert('рецепт з молоком');
+						break;
+					default:
+						alert('Введено невірне значення, спробуйте ще раз');
+						receptCheck();
+				}
+			}
+			receptCheck();
+		</script>
+	</body>
+</html>
