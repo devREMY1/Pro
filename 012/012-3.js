@@ -1,21 +1,16 @@
-function createLogger(initialLog = '') {
-	let log = initialLog;
-
-	return function (newMessage) {
-		if (log) {
-			log += ' ';
-		}
-		log += newMessage;
+function createLogger() {
+	let log = '';
+	return function (message) {
+		log += (log ? ' ' : '') + message;
 		return log;
 	};
 }
 
-const logger = createLogger();
+const resultLogger = createLogger();
+console.log(resultLogger('Andrew'));
+console.log(resultLogger('hi'));
+console.log(resultLogger('bro'));
 
-console.log(logger('Перший запис'));
-console.log(logger('Другий запис'));
-console.log(logger('Третій запис'));
 
-const anotherLogger = createLogger('Старт');
-console.log(anotherLogger('Додано'));
-console.log(anotherLogger('Ще запис'));
+
+

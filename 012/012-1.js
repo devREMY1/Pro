@@ -1,11 +1,12 @@
-function claculateDiscount(discountPercentage) {
-	return function (purchaseAmount) {
-		return purchaseAmount * (discountPercentage / 100);
+function calculateDiscount(discount) {
+	const discountConvert = parseFloat(discount) / 100;
+
+	return function (price) {
+		return price * (1 - discountConvert);
 	};
 }
 
-const discount10 = claculateDiscount(10);
-const discount20 = claculateDiscount(20);
-
-console.log(discount10(100));
-console.log(discount20(200));
+const result = calculateDiscount('20%');
+console.log(result(100));
+console.log(result(10));
+console.log(result(200));
