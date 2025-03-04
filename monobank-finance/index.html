@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Фінансовий помічник</title>
+		<link rel="stylesheet" href="./css/index.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Фінансовий помічник</h1>
+			</header>
+
+			<section class="security-section">
+				<input
+					type="password"
+					id="tokenInput"
+					placeholder="Введіть ваш X-Token"
+				/>
+				<button class="primary-btn" id="saveTokenBtn">Зберегти токен</button>
+			</section>
+
+			<section class="period-buttons">
+				<button class="secondary-btn" data-days="7">7 днів</button>
+				<button class="secondary-btn" data-days="15">15 днів</button>
+				<button class="secondary-btn" data-days="31">31 день</button>
+			</section>
+
+			<section class="stats-section">
+				<div class="stat-card">
+					<h3>Статистика витрат</h3>
+					<div class="chart-container">
+						<canvas id="expensesChart"></canvas>
+					</div>
+					<div class="chart-toggle">
+						<button class="chart-btn active" data-chart="pie">Кругова</button>
+						<button class="chart-btn" data-chart="line">Лінійна</button>
+					</div>
+				</div>
+				<div class="stat-card">
+					<h3>Статистика надходжень</h3>
+					<div class="chart-container">
+						<canvas id="incomeChart"></canvas>
+					</div>
+				</div>
+			</section>
+
+			<section class="financial-info">
+				<div>Надходження: <span id="income">0</span> ₴</div>
+				<div>Витрати: <span id="expense">0</span> ₴</div>
+				<div>Кредитні кошти: <span id="creditUsed">0</span> ₴</div>
+			</section>
+
+			<section class="category-stats" id="categoryStats"></section>
+			<section class="advice-section" id="advice"></section>
+			<section class="transactions" id="transactions"></section>
+		</div>
+
+		<!-- Модальне вікно вибору категорії -->
+		<div class="modal" id="categoryModal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3>Оберіть категорію</h3>
+				<input type="hidden" id="transactionId" />
+				<select id="customCategory">
+					<option value="Продукти">Продукти</option>
+					<option value="Транспорт">Транспорт</option>
+					<option value="Розваги">Розваги</option>
+					<option value="Кафе">Кафе</option>
+					<option value="Одяг">Одяг</option>
+					<option value="Пошта">Пошта</option>
+					<option value="Комунальні платежі">Комунальні платежі</option>
+					<option value="Переказ коштів">Переказ коштів</option>
+					<option value="Інше">Інше</option>
+				</select>
+				<button class="primary-btn" id="saveCategoryBtn">Зберегти</button>
+			</div>
+		</div>
+
+		<script src="./js/app.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+	</body>
+</html>
